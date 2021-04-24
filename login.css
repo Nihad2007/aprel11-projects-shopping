@@ -1,0 +1,21 @@
+#centerDiv{
+
+margin: auto;
+width: 30%;
+height: 400px;
+
+
+
+
+}
+
+#h1Des{
+	margin: 0 10 0px 0px;
+	color: black;
+	font-weight: bold;
+}
+
+.inputDes{
+	width: 80%;
+}
+

@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+label{margin-top: 5px;margin-bottom: 5px;}
+}
+.lightbox {
+    /* Default to hidden */
+    display: none;
+  
+    /* Overlay entire screen */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+      filter: opacity(1);
+      animation-duration: 0.3s;
+      animation-name: opacity;
+    
+    /* A bit of padding around image */
+    padding: 1em;
+  
+    /* Translucent background */
+    background: rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+  }
+  @keyframes slide{
+      from{top : 0;}
+      to{top : 50%;}
+  }
+  @keyframes opacity{
+      from{filter: opacity(0);}
+      to{filter: opacity(1);}
+  }
+  .lightbox-content {
+    /* Full width and height */
+        position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 400px;;
+    height: auto;
+    background-color: white;;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 4px;
+    animation-name: slide;
+    animation-duration: 0.4s;
+}
+.send-button,.close-button{
+    background-color: #0069D9;
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.send-button:hover,.close-button:hover{
+    filter: grayscale(0.5);
+}
+.send-button{
+    margin: 0  auto;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.close-button{
+    margin: 0 auto;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: #ee0000;
+}
+.form-content,.form-content-error{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 32px;
+    max-height: 300px;
+    border-radius: 4px;
+    height: 32px;
+}
+.form-content-error{
+    border: 1px solid rgb(218, 15, 15);
+}
+.err-label{
+    color: rgb(218, 15, 15);
+    font-weight: 600;
+}
+.price-div{
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgb(0, 0, 0,0.4);
+    border-radius: 4px;
+}
+.price-div-error{
+    border-radius: 4px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgb(218, 15, 15);
+}
+#price{
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    border: 0;
+}
+.man-div{
+    width: 10%;
+    line-height: 32px;
+    background-color: rgb(177, 170, 170);
+    text-align: center;
+}
+#search-bar{
+    width: 200px;
+    max-width: 200px;
+    min-width: 200px;}
+.search-bar-text{
+    margin: 0;
+    margin-left: auto;
+    font-size: large;
+    margin-right: 5px;
+}
