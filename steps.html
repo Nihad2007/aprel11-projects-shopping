@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-3">
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Proqramci</th>
+        <th>Addim</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td>Ayxan</td>
+        <td>Sifarisler bolmesi</td>
+        <td>yarimciq</td>
+      </tr>
+
+      <tr>
+        <td>Cavid</td>
+        <td>Sifaris tesdiqini daha yaxsi etmek</td>
+        <td>Əsas səhifəyə 5 şəkilli slayd qoymaq</td>
+      </tr>
+
+      <tr>
+        <td>Serxan</td>
+        <td>Alis veris sehifesinde axtaris edende yarim saniye yuklenir.. yazilsin</td>
+        <td>Əsas səhifəyə 5 şəkilli slayd qoymaq</td>
+      </tr>
+
+
+      <tr>
+        <td>Nihat</td>
+        <td>Sifarisler bolmesinə bir neçə demo sifariş əlavə etmək və cədvəldə göstərmək</td>
+        <td>yarimciq</td>
+      </tr>
+
+      <tr>
+        <td>Adil</td>
+        <td>Səbət pəncərəsində baş hissəyə Səbət sözü yazılsın və səbətdə olan məhsul sayı aşağıda görünsün. Hamısını sil düyməsinin sağ tərəfində.</td>
+        <td>-</td>
+      </tr>
+
+      <tr>
+        <td>Mehemmed</td>
+        <td>Səbət pəncərəsində baş hissəyə Səbət sözü yazılsın və səbətdə olan məhsul sayı aşağıda görünsün. Hamısını sil düyməsinin sağ tərəfində.</td>
+        <td>-</td>
+      </tr>
+
+
+
+       
+    </tbody>
+  </table>
+  
+  
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</body>
+</html>

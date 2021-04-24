@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/customer.js" defer></script>
+    <script src="js/customer-confirm.js" defer></script>
+	 
+    <link rel="stylesheet" href="css/customer.css">
+    <link rel="stylesheet" href="css/customer-confirm.css">
+	
+    <title>Məhsullar</title>
+</head>
+<body>
+    <div class="lightbox" id="lightbox" style="display: none">
+      <div class="lightbox-content">
+          <form>
+               <button type="button" class="close-button" onclick="closeconfirm()">Bağla</button>
+              <label>Ad:</label>
+              <input oninput="nameFocusOut()" class="form-content-error" id="user-name">
+             <p id="name-error" class="err-label">Adi boş qoymaq olmaz</p>
+
+              <label>Soyad:</label>
+              <input oninput="surnameFocusOut()" class="form-content-error" id="user-surname">
+              <p id="surname-error" class="err-label">Soyadi boş qoymaq olmaz</p>
+
+              <label>Adres:</label>
+              
+               <input oninput="adresFocusOut()" class="form-content-error" id="user-adres">
+            <p id="adres-error" class="err-label">Adresi boş qoymaq olmaz</p>
+              
+              <label>Telefon:</label>
+              <input oninput="phoneFocusOut()" class="form-content-error" id="user-Telefon" placeholder="Meselen:050-216-48-06">
+              <p id="phone-error" class="err-label">Nomreni boş qoymaq olmaz</p>
+
+              <label>Email:</label>
+              <input type="email" oninput="emailFocusOut()" class="form-content-error" id="user-Email" placeholder="Meselen:alicavid826@gmail.com">
+              <p id="email-error" class="err-label">Emaili boş qoymaq olmaz</p>
+              
+               <label>Qeyd:</label>
+              <input  class="form-content" id="user-note" style="margin-bottom: 10px;">
+              <p id="note-error" class="err-label"></p>
+
+              <button type="button" class="send-button" onclick="saveOrder()">Yadda Saxla</button>
+             
+          </form>
+      </div>
+  </div>
+     <div   style="  display: none;background-color: white;width: 40%;height: 20%;margin-left: 30%;margin-top: 1%; position: fixed;box-shadow: 10px 10px 10px 10px" id="modal"><br><br><h1 style="color: red;font-size: 35px;text-align: center;vertical-align: middle;">Sebet bosdur</h1>
+    <br> </div>
+    
+     <div  style="  display: none;background-color: white;width: 40%;height: 20%;margin-left: 30%;margin-top: 1%; position: fixed;box-shadow: 10px 10px 10px 10px" id="modal2"><br><br><h1 style="color: red;font-size: 35px;text-align: center;vertical-align: middle;">Melumatlari dogru yazin</h1>
+    <br> </div>
+    
+     <div  style="  display: none;background-color: white;width: 40%;height: 20%;margin-left: 30%;margin-top: 1%; position: fixed;box-shadow: 10px 10px 10px 10px" id="modal3"><br><br><h1 style="color: green;font-size: 35px;text-align: center;vertical-align: middle;">Sifarisiniz tesdiqlendi</h1>
+    <br> </div>
+    
+    <button class="btn btn-primary" onclick="homePage()">Əsas səhifə</button>
+    
+	
+    <div id="container" style="overflow:auto;"></div>
+	
+	
+	 <button id="open-basket-button" class="btn btn-success" onclick="onOpenBasket()">
+	 Səbət (<span id="basket-count">0</span>)</button>
+	 
+	 
+	 	<input class="form-control" id="search-input" 
+		onchange="searchProducts(this.value)" placeholder="Axtarış...">
+		
+		
+		
+		
+		
+		<div id="basket-modal" class="modal"> 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id="modal-close-button" class="close">&times;</span>
+     <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Şəkil
+                </th>
+
+                <th>
+             Ad
+                </th>
+                <th>
+                Qiymət
+                </th>
+                
+                <th>
+                    Miqdar
+                </th>
+                <th>
+                    Ümumi qiymət
+                </th>
+                <th>
+                     
+                </th>
+            </tr>
+        </thead>
+        <tbody id="basket-products-table-body">
+
+        </tbody>
+    </table> 
+      
+      <h1 id="total-price" style="margin: 10px;font-size: 25px;">Umumi qiymet:</h1>
+	<button class="btn btn-success" onclick="tesdiqPage()">Sifarisi Tesdiqle</button>
+      <button class="btn btn-danger" onclick="deleteall()">Hamisini sil</button>
+      
+            </div></div>
+</body>
+</html>

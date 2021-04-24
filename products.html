@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="js/products.js" defer></script>
+     
+<title>Məhsullar</title>
+</head>
+<body>
+   <div class="top-bar">
+    <div class="buttons">
+      <button onclick="onNewProduct()" class="btn btn-primary">Yeni Məhsul</button>
+      <button onclick="onHomeButton()" class="btn home">Əsas Səhifə</button>
+      <p id="user-text"></p>
+      <p class="search-bar-text">Search:</p>
+      <input class="form-content" oninput="onSearch(this.value)" id="search-bar">
+    </div>
+   </div>
+   <table class="table table-hover">
+       <thead class="thead-dark">
+           <tr>
+               <th>ID</th>
+               <th>Ad</th>
+               <th>Təsvir</th>
+               <th>Qiymət</th>
+               <th>Müəllif</th>
+               <th>Səhifə Sayı</th>
+               <th>Əməliyyat</th>
+           </tr>
+       </thead>
+       <tbody id="tbody"></tbody>
+   </table>
+   <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+          <form>
+              <label>Ad:</label>
+              <input oninput="nameFocusOut()" class="form-content-error" id="nameProd">
+              <p id="name-error" class="err-label">Kitab adını boş qoymaq olmaz</p>
+
+              <label>Təsvir:</label>
+              <textarea oninput="descriptFocusOut()" class="form-content" id="descript"></textarea>
+              <p id="descript-error" class="err-label"></p>
+
+              <label>Qiymət:</label>
+              <div class="price-div-error" id="price-div">
+               <input oninput="priceFocusOut()" type="number" class="form-content-error" id="price">
+               <div class="man-div">₼</div>
+            </div>
+              <p id="price-error" class="err-label">Kitab qiymətini boş qoymaq olmaz</p>
+
+              <label>Müəllif:</label>
+              <input oninput="writerFocusOut()" class="form-content" id="writer">
+              <p id="writer-error" class="err-label"></p>
+
+              <label>Səhifə sayı:</label>
+              <input type="number" oninput="pageFocusOut()" class="form-content" id="page">
+              <p id="page-error" class="err-label"></p>
+
+              <button type="button" class="send-button" onclick="saveProduct()">Yadda Saxla</button>
+              <button type="button" class="close-button" onclick="closeProduct()">Bağla</button>
+          </form>
+      </div>
+  </div>
+</body>
+</html>
